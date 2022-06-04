@@ -11,5 +11,6 @@ namespace CaseExsitec.Data
         {
         }
         public DbSet<CaseExsitec.Models.InnOgUtleveranse>? InnOgUtleveranse { get; set; }
+        public DbSet<CaseExsitec.Models.Produkter>? Produkter { get; set; }
     }
 }
