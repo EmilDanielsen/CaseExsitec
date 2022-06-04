@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using CaseExsitec.Models;
 
 namespace CaseExsitec.Data
 {
@@ -9,5 +10,6 @@ namespace CaseExsitec.Data
             : base(options)
         {
         }
+        public DbSet<CaseExsitec.Models.InnOgUtleveranse>? InnOgUtleveranse { get; set; }
     }
 }

@@ -1,0 +1,53 @@
+﻿@model CaseExsitec.Models.InnOgUtleveranse
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>InnOgUtleveranse</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Dato" class="control-label"></label>
+                <input asp-for="Dato" class="form-control" />
+                <span asp-validation-for="Dato" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Produkt" class="control-label"></label>
+                <input asp-for="Produkt" class="form-control" />
+                <span asp-validation-for="Produkt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TilFra" class="control-label"></label>
+                <input asp-for="TilFra" class="form-control" />
+                <span asp-validation-for="TilFra" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Antall" class="control-label"></label>
+                <input asp-for="Antall" class="form-control" />
+                <span asp-validation-for="Antall" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="InngåendeLagersaldo" /> @Html.DisplayNameFor(model => model.InngåendeLagersaldo)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

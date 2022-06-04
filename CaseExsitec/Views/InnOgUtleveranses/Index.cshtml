@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CaseExsitec.Models.InnOgUtleveranse>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inn- og utleveranse</h1>
+
+<p>
+    <a asp-action="Create">Lag ny</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Produkt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TilFra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Antall)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InngåendeLagersaldo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produkt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TilFra)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Antall)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InngåendeLagersaldo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Rediger</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Slett</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
