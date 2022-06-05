@@ -24,11 +24,13 @@ nav {
 }
 
 .logo {
-    align-items: center
+    text-align: center
 
 }
 
 .pear {
-    height: 100px;
-    width: 100px;
+    height: 600px;
+    width: 800px;
+    justify-content: center;
+    margin-top: 30px;
 }
