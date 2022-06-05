@@ -22,3 +22,13 @@ body {
 nav {
     background-image: linear-gradient(seagreen, darkgreen);
 }
+
+.logo {
+    align-items: center
+
+}
+
+.pear {
+    height: 100px;
+    width: 100px;
+}
