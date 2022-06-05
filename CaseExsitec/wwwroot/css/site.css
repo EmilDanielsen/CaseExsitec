@@ -19,3 +19,6 @@ body {
     color: green;
 }
 
+nav {
+    background-image: linear-gradient(seagreen, darkgreen);
+}
