@@ -48,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.InngåendeLagersaldo)
             </td>
             <td>
-                <button type="button"><a class="Edit" asp-action="Edit" asp-route-id="@item.Id">Rediger</a></button> |
-                <button type="button"><a class="Details" asp-action="Details" asp-route-id="@item.Id">Detaljer</a></button> |
-                <button type="button"><a class="Delete" asp-action="Delete" asp-route-id="@item.Id">Slett</a></button>
+                <a asp-action="Edit" asp-route-id="@item.Id"><button class="button-1">Rediger</button></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><button class="button-2">Detaljer</button></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><button class="button-3">Slett</button></a>
             </td>
         </tr>
 }
