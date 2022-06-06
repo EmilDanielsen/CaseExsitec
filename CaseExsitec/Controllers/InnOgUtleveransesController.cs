@@ -27,6 +27,14 @@ namespace CaseExsitec.Controllers
                           Problem("Entity set 'ApplicationDbContext.InnOgUtleveranse'  is null.");
         }
 
+        //GET: Lagersaldo
+        public async Task<IActionResult> ShowLagersaldo()
+        {
+            return _context.InnOgUtleveranse != null ?
+                         View(await _context.InnOgUtleveranse.ToListAsync()) :
+                         Problem("Entity set 'ApplicationDbContext.InnOgUtleveranse'  is null.");
+        }
+
         // GET: InnOgUtleveranses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
