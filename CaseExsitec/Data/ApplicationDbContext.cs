@@ -13,5 +13,6 @@ namespace CaseExsitec.Data
         public DbSet<CaseExsitec.Models.InnOgUtleveranse>? InnOgUtleveranse { get; set; }
         public DbSet<CaseExsitec.Models.Produkter>? Produkter { get; set; }
         public DbSet<CaseExsitec.Models.Varelagre>? Varelagre { get; set; }
+        public DbSet<CaseExsitec.Models.LagersaldoModel>? LagersaldoModel { get; set; }
     }
 }
