@@ -36,117 +36,51 @@
         </tr>
     </thead>
     <tbody>
-
+        @{
+            string[,] steder = {{ "jTelefon", "jPlatta", "Päronklocka" }, { "Cupertino", "Norrköping", "Frankurt" } };
+            for (int i = 0; i < steder.GetLength(1); i++)
+            {
+                
         <tr>
             <td>
-                jTelefon
+                @steder[0, i]
             </td>
             <td>
-                Cupertino
+                @steder[1, 0]
             </td>
             <td>
-             @getLagerSaldo("jTelefon", "Cupertino")
+               @getLagerSaldo(steder[0,i], steder[1,0])
+            </td>
+
+        </tr>
+            <tr>
+            <td>
+                @steder[0, i]
+            </td>
+            <td>
+                @steder[1, 1]
+            </td>
+            <td>
+               @getLagerSaldo(steder[0,i], steder[1,1])
             </td>
         </tr>
-
-        <tr>
-            <td>
-                jTelefon
-            </td>
-            <td>
-                Cupertino
-            </td>
-            <td>
-             @getLagerSaldo("jTelefon", "Norrköping")
-            </td>
-        </tr>
-
+        
         
         <tr>
             <td>
-                jTelefon
+                @steder[0, i]
             </td>
             <td>
-                Frankurt
+                @steder[1, 2]
             </td>
             <td>
-             @getLagerSaldo("jTelefon", "Frankurt")
+               @getLagerSaldo(steder[0,i], steder[1,2])
             </td>
         </tr>
-
-        <tr>
-            <td>
-                jPlatta
-            </td>
-            <td>
-                Cupertino
-            </td>
-            <td>
-             @getLagerSaldo("jPlatta", "Cupertino")
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                jPlatta
-            </td>
-            <td>
-                Cupertino
-            </td>
-            <td>
-             @getLagerSaldo("jPlatta", "Norrköping")
-            </td>
-        </tr>
-
         
-        <tr>
-            <td>
-                jPlatta
-            </td>
-            <td>
-                Frankurt
-            </td>
-            <td>
-             @getLagerSaldo("jPlatta", "Frankurt")
-            </td>
-        </tr>
-
-         <tr>
-            <td>
-                Päronklocka
-            </td>
-            <td>
-                Cupertino
-            </td>
-            <td>
-             @getLagerSaldo("Päronklocka", "Cupertino")
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                Päronklocka
-            </td>
-            <td>
-                Cupertino
-            </td>
-            <td>
-             @getLagerSaldo("Päronklocka", "Norrköping")
-            </td>
-        </tr>
-
-        
-        <tr>
-            <td>
-                Päronklocka
-            </td>
-            <td>
-                Frankurt
-            </td>
-            <td>
-             @getLagerSaldo("Päronklocka", "Frankurt")
-            </td>
-        </tr>
+    }
+}
 
     </tbody>
 </table>
+
