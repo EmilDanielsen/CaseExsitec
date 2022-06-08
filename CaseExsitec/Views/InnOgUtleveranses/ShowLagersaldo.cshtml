@@ -1,0 +1,152 @@
+﻿@model IEnumerable<CaseExsitec.Models.InnOgUtleveranse>
+
+
+@{
+    int getLagerSaldo(string x, string y){
+        int result = 0;
+        foreach (var item in Model)
+        {
+
+            if (item.Produkt == x && item.TilFra == y)
+            {
+
+                result = result + item.Antall;
+            }
+
+
+        }
+        return result;
+    }
+    }
+
+    <h1 style="text-align: center;">Lagersaldo</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Produkt
+            </th>
+            <th>
+                Sted
+            </th>
+            <th>
+                Lagersaldo
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>
+                jTelefon
+            </td>
+            <td>
+                Cupertino
+            </td>
+            <td>
+             @getLagerSaldo("jTelefon", "Cupertino")
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                jTelefon
+            </td>
+            <td>
+                Cupertino
+            </td>
+            <td>
+             @getLagerSaldo("jTelefon", "Norrköping")
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td>
+                jTelefon
+            </td>
+            <td>
+                Frankurt
+            </td>
+            <td>
+             @getLagerSaldo("jTelefon", "Frankurt")
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                jPlatta
+            </td>
+            <td>
+                Cupertino
+            </td>
+            <td>
+             @getLagerSaldo("jPlatta", "Cupertino")
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                jPlatta
+            </td>
+            <td>
+                Cupertino
+            </td>
+            <td>
+             @getLagerSaldo("jPlatta", "Norrköping")
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td>
+                jPlatta
+            </td>
+            <td>
+                Frankurt
+            </td>
+            <td>
+             @getLagerSaldo("jPlatta", "Frankurt")
+            </td>
+        </tr>
+
+         <tr>
+            <td>
+                Päronklocka
+            </td>
+            <td>
+                Cupertino
+            </td>
+            <td>
+             @getLagerSaldo("Päronklocka", "Cupertino")
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Päronklocka
+            </td>
+            <td>
+                Cupertino
+            </td>
+            <td>
+             @getLagerSaldo("Päronklocka", "Norrköping")
+            </td>
+        </tr>
+
+        
+        <tr>
+            <td>
+                Päronklocka
+            </td>
+            <td>
+                Frankurt
+            </td>
+            <td>
+             @getLagerSaldo("Päronklocka", "Frankurt")
+            </td>
+        </tr>
+
+    </tbody>
+</table>
