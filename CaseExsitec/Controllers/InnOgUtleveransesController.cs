@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CaseExsitec.Data;
 using CaseExsitec.Models;
-using Microsoft.AspNetCore.Authorization;
+
 
 namespace CaseExsitec.Controllers
 {
@@ -55,8 +55,6 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: InnOgUtleveranses/Create
-
-        [Authorize]
         public IActionResult Create()
         {
             return View();
