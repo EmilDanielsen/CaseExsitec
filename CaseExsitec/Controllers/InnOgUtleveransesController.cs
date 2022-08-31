@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CaseExsitec.Data;
 using CaseExsitec.Models;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace CaseExsitec.Controllers
 {
@@ -55,6 +55,8 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: InnOgUtleveranses/Create
+
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -63,6 +65,7 @@ namespace CaseExsitec.Controllers
         // POST: InnOgUtleveranses/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Dato,Produkt,TilFra,Antall,InngåendeLagersaldo")] InnOgUtleveranse innOgUtleveranse)
@@ -77,6 +80,8 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: InnOgUtleveranses/Edit/5
+
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.InnOgUtleveranse == null)
@@ -95,6 +100,7 @@ namespace CaseExsitec.Controllers
         // POST: InnOgUtleveranses/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Dato,Produkt,TilFra,Antall,InngåendeLagersaldo")] InnOgUtleveranse innOgUtleveranse)
@@ -128,6 +134,8 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: InnOgUtleveranses/Delete/5
+
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.InnOgUtleveranse == null)
@@ -148,6 +156,7 @@ namespace CaseExsitec.Controllers
         // POST: InnOgUtleveranses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.InnOgUtleveranse == null)
