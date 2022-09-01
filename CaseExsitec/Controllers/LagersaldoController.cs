@@ -21,6 +21,7 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: Lagersaldo
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Index()
         {
               return _context.LagersaldoModel != null ? 
@@ -29,6 +30,7 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: Lagersaldo/Details/5
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.LagersaldoModel == null)

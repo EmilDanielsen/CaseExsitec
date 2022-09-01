@@ -21,6 +21,7 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: InnOgUtleveranses
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Index()
         {
               return _context.InnOgUtleveranse != null ? 
@@ -29,6 +30,7 @@ namespace CaseExsitec.Controllers
         }
 
         //GET: Lagersaldo
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> ShowLagersaldo()
         {
             return _context.InnOgUtleveranse != null ?
@@ -37,6 +39,7 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: InnOgUtleveranses/Details/5
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.InnOgUtleveranse == null)

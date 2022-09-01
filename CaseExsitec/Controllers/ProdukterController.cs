@@ -21,6 +21,8 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: Produkter
+
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Index()
         {
               return _context.Produkter != null ? 
@@ -29,6 +31,8 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: Produkter/Details/5
+
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Produkter == null)

@@ -21,6 +21,7 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: Varelagre
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Index()
         {
               return _context.Varelagre != null ? 
@@ -29,6 +30,7 @@ namespace CaseExsitec.Controllers
         }
 
         // GET: Varelagre/Details/5
+        [Authorize(Roles = "Admin, Ansatte")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null || _context.Varelagre == null)
