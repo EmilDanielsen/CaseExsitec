@@ -1,0 +1,24 @@
+﻿@page
+@model ResetAuthenticatorModel
+@{
+    ViewData["Title"] = "Tilbakestill autentiseringsnøkkel";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h3>@ViewData["Title"]</h3>
+<div class="alert alert-warning" role="alert">
+    <p>
+        <span class="glyphicon glyphicon-warning-sign"></span>
+        <strong>Hvis du tilbakestiller autentiseringsnøkkelen din, vil ikke autentiseringsappen din fungere før du konfigurerer den på nytt.</strong>
+    </p>
+    <p>
+        Denne prosessen deaktiverer 2FA til du bekrefter autentiseringsappen din.
+        Hvis du ikke fullfører konfigurasjonen av autentiseringsappen, kan du miste tilgangen til kontoen din.
+    </p>
+</div>
+<div>
+    <form id="reset-authenticator-form" method="post">
+        <button id="reset-authenticator-button" class="btn btn-danger" type="submit">Tilbakestill autentiserings nøkkel</button>
+    </form>
+</div>
