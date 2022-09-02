@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Logg inn";
 }
-
+<div class="row login">
 <h1>@ViewData["Title"]</h1>
 <div class="row">
     <div class="col-md-4">
@@ -33,7 +33,7 @@
                 <div>
                     <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Logg inn</button>
                 </div>
-                <div>
+                <div class="row extraloginbuttons">
                     <p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Glemt ditt passord?</a>
                     </p>
@@ -49,8 +49,6 @@
     </div>
     <div class="col-md-6 col-md-offset-2">
         <section>
-            <h3>Bruk en annen service for å logge inn.</h3>
-            <hr />
             @{
                 if ((Model.ExternalLogins?.Count ?? 0) == 0)
                 {
@@ -76,6 +74,7 @@
             }
         </section>
     </div>
+</div>
 </div>
 
 @section Scripts {
